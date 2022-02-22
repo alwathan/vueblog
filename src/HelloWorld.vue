@@ -13,6 +13,12 @@
     <h4 v-if="ganjil">Ganjil</h4>
     <h4 v-if="genap">Genap</h4>
     <button v-on:click="randomNumber">Generate</button>
+    <hr>
+    <table border=1>
+        <tr v-for="hari in namaHari" v-bind:key="hari">
+            <td>{{ hari }}</td>
+        </tr>
+    </table>
 </template>
 
 <script>
@@ -25,6 +31,9 @@ export default{
             messages : '',
             ganjil : false,
             genap : false,
+            namaHari : ["Senin", "Selasa", "Rabu", "Kamis",
+                        "Jumat", "Sabtu", "Minggu"
+                        ]
         }
     },
     mounted(){
